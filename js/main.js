@@ -25,8 +25,10 @@ function agregarPersona(evt) {
     if (nombre != "" & apellido != "" & edad != "" & Dni != "") {
         const nuevaPersona = new Persona(nombre, apellido, edad, Dni);
         //Crear el elemento de la lista
-        const elementoLista = document.createElement("li");
-        elementoLista.textContent = `Nombre: ${nuevaPersona.nombre}, Apellido: ${nuevaPersona.apellido}, Edad : ${nuevaPersona.edad}, DNI: ${nuevaPersona.dni}`;
+        const elementoLista = document.createElement("span");
+        elementoLista.innerHTML = `<h2 class="nombreC"> ${nuevaPersona.nombre} ${nuevaPersona.apellido}</h2> 
+                                    <h3>Edad: ${nuevaPersona.edad}</h3> 
+                                    <h3>DNI: ${nuevaPersona.dni}</h3> `;
         //crear boton de eliminar para cada elemento
         const botonEliminar = document.createElement("button");
         botonEliminar.textContent = "eliminar"
@@ -37,13 +39,15 @@ function agregarPersona(evt) {
         const listaPersonas = document.getElementById("listaPersonas");
         listaPersonas.appendChild(elementoLista)
         listaPersonas.appendChild(botonEliminar)
-
+        document.getElementById('nombre').value = '';
+        document.getElementById('apellido').value = '';
+        document.getElementById('edad').value = '';
+        document.getElementById('dni').value = '';
     }
 }
 
 const botonAgregarPersonas = document.getElementById("Guardar");
 botonAgregarPersonas.addEventListener("click", agregarPersona)
-
 
 
 

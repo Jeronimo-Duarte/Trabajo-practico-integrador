@@ -10,17 +10,17 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-lila">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Formulario</a>
+            <a class="navbar-brand fs-2" href="index.html">Formulario</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse fs-2" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="api.html">API</a>
+                        <a class="nav-link" aria-current="page" href="api.html">API</a>
                     </li>
                 </ul>
             </div>
@@ -30,8 +30,8 @@
 
 
 
-
-    <form id="formularioDatos">
+    <div class="pt-5">  
+    <form id="formularioDatos" class="pt-3">
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="nombre">
@@ -50,8 +50,11 @@
         </div>
         <button type="submit" class="btn btn-primary " id="Guardar">Guardar</button>
     </form>
-
-    <ul id="listaPersonas"></ul>
+    </div>
+    <div id="listaPersonas">
+        
+        
+    </div>
 
 
 
