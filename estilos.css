@@ -65,7 +65,7 @@ body {
 
 /* Estilos para la lista de personas */
 #listaPersonas {
-    margin: 1rem;
+    margin: auto;
     background-color: rgb(240, 82, 82);
     display: flex;
     flex-wrap: wrap;
@@ -88,8 +88,20 @@ body {
     width: 14rem;
     padding: 2rem;
     margin: 1rem;
+    }
     
-  }    
+    .botonEliminar{
+        padding: 0.7rem;
+        color: #fff;
+        border-radius: 1.2rem;
+        background-color: rgb(178, 34, 34);
+        box-shadow: 0 2px rgb(139, 0, 0);
+    }
+
+
+    .usuarios{
+        background-color: aquamarine;
+    }
 
   
   

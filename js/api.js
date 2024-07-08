@@ -4,6 +4,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
   .then(usuarios => {
     usuarios.forEach(usuario => {
       let infousuario = document.createElement('article');
+      infousuario.classList.add("usuarios")
       infousuario.innerHTML = htmlUsuarios(usuario.id, usuario.name, usuario.username);
       main.appendChild(infousuario);
     });
@@ -15,7 +16,8 @@ function htmlUsuarios(id, name, username) {
     <h4 class="nombre">${name}</h4>
     <h5 class="usuario">${username}</h5>
     <button class="eliminar btn btn-danger" data-id="${id}">Eliminar</button>
-  `;
+    <button class="modificar btn btn-danger" data-id="${id}">Modificar</button>
+      `;
   return html;
 }
 
@@ -35,6 +37,7 @@ function agregarUsuario(evt) {
     .then(response => response.json())
     .then(nuevoUsuario => {
       let infousuario = document.createElement('article');
+      infousuario.classList.add("usuarios")
       infousuario.innerHTML = htmlUsuarios(nuevoUsuario.id, nuevoUsuario.name, nuevoUsuario.username);
       main.appendChild(infousuario);
       document.getElementById('nombre').value = '';
@@ -70,37 +73,30 @@ main.addEventListener('click', event => {
   }
 })
 
-
-
-//Funcion para modificar usuario 
-function ModifcarUsuario(evt) {
-  evt.preventDefault()
-  const userId = document.getElementById("id").value
-  const nombreEditado = document.getElementById("nombreModificado").value
-  const usernameEditado = document.getElementById("usuarioModificado").value
-
+// Función para modificar usuario
+function modificarUsuario(userId) {
+  const nombreNuevo = prompt("Ingrese el nuevo nombre:");
+  const usernameNuevo = prompt("Ingrese el nuevo nombre de usuario:");
   fetch(`https://jsonplaceholder.typicode.com/users/${userId}`, {
     method: 'PUT',
-    body: JSON.stringify({  name: nombreEditado, username: usernameEditado }),
     headers: {
       'Content-Type': 'application/json'
     },
+    body: JSON.stringify({ name: nombreNuevo, username: usernameNuevo })
   })
-  .then(response => {
-    if (response.ok) {
-      // Actualización exitosa, actualizar datos en el DOM
-      const usuarioActualizado = document.querySelector(`button[data-id="${userId}"]`).parentNode;
-      usuarioActualizado.querySelector('.nombre').textContent = nombreEditado;
-      usuarioActualizado.querySelector('.usuario').textContent = usernameEditado;
-      document.getElementById('nombreModificado').value = '';
-      document.getElementById('usuarioModificado').value = '';
-    } else {
-      console.error('Error al editar usuario');
-    }
-  })
-    document.getElementById('nombreModificado').value = '';
-    document.getElementById('usuarioModificado').value = '';
+    .then(response => response.json())
+    .then(usuarioActualizado => {
+      const usuarioModificar = document.querySelector(`button[data-id="${userId}"]`).parentNode;
+      usuarioModificar.querySelector('.nombre').textContent = usuarioActualizado.name;
+      usuarioModificar.querySelector('.usuario').textContent = usuarioActualizado.username;
+    })
 }
 
-const botonModificarUsuario = document.getElementById("modificar");
-botonModificarUsuario.addEventListener("submit", ModifcarUsuario);
+
+main.addEventListener('click', event => {  
+  if (event.target.classList.contains('modificar')) {
+  const userId = event.target.getAttribute('data-id');
+  modificarUsuario(userId);
+}
+})
+

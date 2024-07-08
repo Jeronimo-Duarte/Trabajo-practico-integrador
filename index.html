@@ -30,41 +30,58 @@
 
 
 
-    <div class="pt-5">  
-    <form id="formularioDatos" class="pt-3">
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre">
-        </div>
-        <div class="mb-3">
-            <label for="apellido" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="apellido">
-        </div>
-        <div class="mb-3">
-            <label for="edad" class="form-label">Edad</label>
-            <input type="number" class="form-control" id="edad">
-        </div>
-        <div class="mb-3">
-            <label for="dni" class="form-label">DNI</label>
-            <input type="number" class="form-control" id="dni">
-        </div>
-        <button type="submit" class="btn btn-primary " id="Guardar">Guardar</button>
-    </form>
+    <div class="pt-5">
+        <form id="formularioDatos" class="pt-3">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre">
+            </div>
+            <div class="mb-3">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido">
+            </div>
+            <div class="mb-3">
+                <label for="edad" class="form-label">Edad</label>
+                <input type="number" class="form-control" id="edad">
+            </div>
+            <div class="mb-3">
+                <label for="dni" class="form-label">DNI</label>
+                <input type="number" class="form-control" id="dni">
+            </div>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Guardar
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelar">Cancelar</button>
+                            <button type="button" class="btn btn-primary " id="Guardar">Confirmar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
     </div>
     <div id="listaPersonas">
-        
-        
+
+
     </div>
-
-
-
-
-
-
-
-
-
-
+    
     <script src="./js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

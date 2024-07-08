@@ -12,7 +12,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-lila">
         <div class="container-fluid">
-            <a class="navbar-brand fs-2" href="index.html">Navbar</a>
+            <a class="navbar-brand fs-2" href="index.html">Formulario</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,8 +33,6 @@
     <p class="d-inline-flex gap-1">
         <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
             aria-expanded="false" aria-controls="multiCollapseExample1">Agregar usuario</a>
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2"
-            aria-expanded="false" aria-controls="multiCollapseExample2">Modificar usuario</button>
     </p>
     <div class="row">
         <div class="col">
@@ -42,41 +40,19 @@
                 <div class="card card-body">
                     <form>
                         <div class="mb-3">
-                            <label for="nombre" class="formModificar">Nombre</label>
+                            <label for="nombre" class="formModificar">Nombre y Apellido</label>
                             <input type="text" class="form-control" id="nombre">
                         </div>
                         <div class="mb-3">
                             <label for="usuario" class="formModificar">Nombre de Usuario</label>
                             <input type="text" class="form-control" id="usuario">
                         </div>
-                        <button type="submit" class="btn btn-primary "id="agregar">Agregar</button>
+                        <button type="submit" class="btn btn-primary " id="agregar">Agregar</button>
                     </form>
                 </div>
             </div>
         </div>
-            <div class="row">
-                <div class="col">
-                    <div class="collapse multi-collapse" id="multiCollapseExample2">
-                        <div class="card card-body">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="id" class="formModificar">Id del usuario que quieras modificar</label>
-                                    <input type="number" class="form-control" id="id">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nombreModificado" class="formModificar"> Modificar Nombre</label>
-                                    <input type="text" class="form-control" id="nombreModificado">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="usuarioModificado" class="formModificar"> Modificar Username</label>
-                                    <input type="text" class="form-control" id="usuarioModificado">
-                                </div>
-                                <button type="submit" class="btn btn-primary "id="modificar">Modificar</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-        </div>
+
 
         <script src="./js/api.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

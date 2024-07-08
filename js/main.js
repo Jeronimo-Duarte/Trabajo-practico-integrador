@@ -5,11 +5,12 @@ class Persona {
         this.edad = edad
         this.dni = dni
     }
-    //Método
+    //Metodo
     adoptar() {
         this.adoptar = true;
     }
 }
+
 
 function agregarPersona(evt) {
     evt.preventDefault()
@@ -31,14 +32,15 @@ function agregarPersona(evt) {
                                     <h3>DNI: ${nuevaPersona.dni}</h3> `;
         //crear boton de eliminar para cada elemento
         const botonEliminar = document.createElement("button");
-        botonEliminar.textContent = "eliminar"
+        botonEliminar.textContent = "Eliminar"
+        botonEliminar.classList.add("botonEliminar")
         botonEliminar.addEventListener("click", function(){
         elementoLista.remove()
-        botonEliminar.remove()
         })
+        elementoLista.appendChild(botonEliminar)
         const listaPersonas = document.getElementById("listaPersonas");
         listaPersonas.appendChild(elementoLista)
-        listaPersonas.appendChild(botonEliminar)
+
         document.getElementById('nombre').value = '';
         document.getElementById('apellido').value = '';
         document.getElementById('edad').value = '';
