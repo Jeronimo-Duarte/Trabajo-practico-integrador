@@ -35,7 +35,7 @@ function agregarUsuario(evt) {
   })
     .then(response => response.json())
     .then(nuevoUsuario => {
-      if (nombreNuevo != "" & usernameNuevo != "") {
+      if (nuevoNombre != "" & NuevoUsername != "") {
       let infousuario = document.createElement('article');
       infousuario.classList.add("usuarios")
       infousuario.innerHTML = htmlUsuarios(nuevoUsuario.id, nuevoUsuario.name, nuevoUsuario.username);
