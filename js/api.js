@@ -14,10 +14,9 @@ fetch('https://jsonplaceholder.typicode.com/users')
 function htmlUsuarios(id, name, username) {
   let html = `
     <h4 class="nombre">${name}</h4>
-    <h5 class="usuario">${username}</h5>
-    <button class="eliminar btn btn-danger" data-id="${id}">Eliminar</button>
-    <button class="modificar btn btn-danger" data-id="${id}">Modificar</button>
-      `;
+    <h5 class="username">${username}</h5>
+    <button class="eliminar " data-id="${id}">Eliminar</button>
+    <button class="modificar " data-id="${id}">Modificar</button>`;
   return html;
 }
 
@@ -36,16 +35,18 @@ function agregarUsuario(evt) {
   })
     .then(response => response.json())
     .then(nuevoUsuario => {
+      if (nombreNuevo != "" & usernameNuevo != "") {
       let infousuario = document.createElement('article');
       infousuario.classList.add("usuarios")
       infousuario.innerHTML = htmlUsuarios(nuevoUsuario.id, nuevoUsuario.name, nuevoUsuario.username);
       main.appendChild(infousuario);
       document.getElementById('nombre').value = '';
       document.getElementById('usuario').value = '';
-    });
+      }
+    })
 }
 
-const botonAgregarUsuarios = document.getElementById("agregar");
+const botonAgregarUsuarios = document.getElementById("agregar")
 botonAgregarUsuarios.addEventListener("click", agregarUsuario)
 
 
@@ -86,17 +87,16 @@ function modificarUsuario(userId) {
   })
     .then(response => response.json())
     .then(usuarioActualizado => {
+      if (nombreNuevo != "" & usernameNuevo != "") {
       const usuarioModificar = document.querySelector(`button[data-id="${userId}"]`).parentNode;
       usuarioModificar.querySelector('.nombre').textContent = usuarioActualizado.name;
-      usuarioModificar.querySelector('.usuario').textContent = usuarioActualizado.username;
+      usuarioModificar.querySelector('.username').textContent = usuarioActualizado.username;
+      } 
     })
 }
-
-
-main.addEventListener('click', event => {  
+main.addEventListener('click', event => {
   if (event.target.classList.contains('modificar')) {
-  const userId = event.target.getAttribute('data-id');
-  modificarUsuario(userId);
-}
+    const userId = event.target.getAttribute('data-id');
+    modificarUsuario(userId);
+  }
 })
-

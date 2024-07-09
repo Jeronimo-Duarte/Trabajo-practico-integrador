@@ -27,6 +27,7 @@ function agregarPersona(evt) {
         const nuevaPersona = new Persona(nombre, apellido, edad, Dni);
         //Crear el elemento de la lista
         const elementoLista = document.createElement("span");
+        elementoLista.classList.add("elementoLista")
         elementoLista.innerHTML = `<h2 class="nombreC"> ${nuevaPersona.nombre} ${nuevaPersona.apellido}</h2> 
                                     <h3>Edad: ${nuevaPersona.edad}</h3> 
                                     <h3>DNI: ${nuevaPersona.dni}</h3> `;

@@ -11,15 +11,15 @@ body {
     background-color: #fff; /* Color de fondo para todo el cuerpo */
 
 }
-
+/* Estilos para el apartado formulario */
 .navbar-brand {
     color: #000000; /* Color del texto del logo */
 
 }
 .nav-link{color: #f8f9fa;}/* Color de los enlaces del navbar */
 
-.bg-body-lila{
-       background-color: rgb(201, 116, 201);
+.bg-body-gris{
+       background-color: #6c757d;
 }
 /* Estilos del formulario */
 #formularioDatos {
@@ -65,31 +65,22 @@ body {
 
 /* Estilos para la lista de personas */
 #listaPersonas {
-    margin: auto;
-    background-color: rgb(240, 82, 82);
+    margin-top: 4rem;
     display: flex;
     flex-wrap: wrap;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: aquamarine;
+ 
 }
-.main{
-    background-color: rgb(230, 230, 230);
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  article{
-    width: 14rem;
+.elementoLista{
+    background-color: rgb(236, 51, 51);
+    border-radius: 10px;
+    width: 20rem;
     padding: 2rem;
     margin: 1rem;
-    height: 14rem;
-  }
+    height: auto;
+}
 
-
-  span{
-    width: 14rem;
-    padding: 2rem;
-    margin: 1rem;
-    }
-    
     .botonEliminar{
         padding: 0.7rem;
         color: #fff;
@@ -98,10 +89,5 @@ body {
         box-shadow: 0 2px rgb(139, 0, 0);
     }
 
-
-    .usuarios{
-        background-color: aquamarine;
-    }
-
-  
+    
   
