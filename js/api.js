@@ -78,6 +78,10 @@ main.addEventListener('click', event => {
 function modificarUsuario(userId) {
   const nombreNuevo = prompt("Ingrese el nuevo nombre:");
   const usernameNuevo = prompt("Ingrese el nuevo nombre de usuario:");
+  if (nombreNuevo.trim() === "" || usernameNuevo.trim() === "") {
+    alert("El nombre o el nombre de usuario no pueden estar vacíos.");
+    return;   
+  }
   fetch(`https://jsonplaceholder.typicode.com/users/${userId}`, {
     method: 'PUT',
     headers: {
