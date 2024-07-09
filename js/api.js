@@ -87,11 +87,10 @@ function modificarUsuario(userId) {
   })
     .then(response => response.json())
     .then(usuarioActualizado => {
-      if (nombreNuevo != "" & usernameNuevo != "") {
       const usuarioModificar = document.querySelector(`button[data-id="${userId}"]`).parentNode;
       usuarioModificar.querySelector('.nombre').textContent = usuarioActualizado.name;
       usuarioModificar.querySelector('.username').textContent = usuarioActualizado.username;
-      } 
+      
     })
 }
 main.addEventListener('click', event => {
