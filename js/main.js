@@ -5,10 +5,6 @@ class Persona {
         this.edad = edad
         this.dni = dni
     }
-    //Metodo
-    adoptar() {
-        this.adoptar = true;
-    }
 }
 
 
@@ -28,9 +24,9 @@ function agregarPersona(evt) {
         //Crear el elemento de la lista
         const elementoLista = document.createElement("span");
         elementoLista.classList.add("elementoLista")
-        elementoLista.innerHTML = `<h2 class="nombreC"> ${nuevaPersona.nombre} ${nuevaPersona.apellido}</h2> 
-                                    <h3>Edad: ${nuevaPersona.edad}</h3> 
-                                    <h3>DNI: ${nuevaPersona.dni}</h3> `;
+        elementoLista.innerHTML = `<h2 class="nombreC"><span class='list-elements-label'><u>Nombre:</u></span> ${nuevaPersona.nombre} ${nuevaPersona.apellido}</h2> 
+                                    <h3><span class='list-elements-label'><u>Edad:</u></span> ${nuevaPersona.edad}</h3> 
+                                    <h3><span class='list-elements-label'><u>DNI:</u></span> ${nuevaPersona.dni}</h3> `;
         //crear boton de eliminar para cada elemento
         const botonEliminar = document.createElement("button");
         botonEliminar.textContent = "Eliminar"
